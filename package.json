@@ -1,0 +1,25 @@
+{
+  "name": "clinikk-tv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "redis": "^3.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devangrajarora/clinikk-tv.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devangrajarora/clinikk-tv/issues"
+  },
+  "homepage": "https://github.com/devangrajarora/clinikk-tv#readme"
+}
