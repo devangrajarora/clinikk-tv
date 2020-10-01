@@ -63,7 +63,7 @@ router.uploadContent = async(req, res) => {
         upload(req, res, async err => {
             if(err) res.sendError(err);
 
-            if(req.session.access === 'undefined' || req.session.access === '0') {
+            if(req.session.access != '1') {
                 return res.sendError(null, `User doesn't have access to upload content`);
             }
 
@@ -86,7 +86,7 @@ router.uploadContent = async(req, res) => {
             }
         })
     } catch(err) {
-        return res.sendError(err);
+        return res.sendError(null,err);
     }
     
 };

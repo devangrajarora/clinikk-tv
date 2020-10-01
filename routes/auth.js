@@ -67,7 +67,7 @@ exp.login = async (req, res) => {
             req.session.isLoggedIn = true;
             req.session.name = user.name;
             req.session.email = user.email;
-            req.session.acess = user.access;
+            req.session.access = user.access;
             req.session.save();
             // console.log(req.session);
 
