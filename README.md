@@ -7,4 +7,4 @@ Node.js, MongoDB, Amazon s3
 
 ```/register```: store details of new user in DB with password hashing \
 ```/login``` \
-```/logout``` \
+```/logout``` 
