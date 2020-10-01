@@ -8,6 +8,7 @@ const redisStore = require('connect-redis')(session);
 
 const db = require('./config/db');
 const response = require('./utils/response');
+const routes = require('./routes');
 
 const PORT = process.env.PORT || 3000;
 
@@ -27,7 +28,7 @@ app.use(
 );
 
 app.use(response);
-app.use("/", require("./routes"));
+app.use('/', routes);
 
 db.connectMongo();
 
