@@ -22,11 +22,14 @@ exp.register = async (req, res) => {
             bcrypt.genSaltSync(10)
         );
 
+        let access = (req.body.access == 1) ? 1 : 0;
+
         const user = new users({
             name,
             email,
             password,
-            location
+            location,
+            access
         });
         
         let result = await user.save();
@@ -64,6 +67,7 @@ exp.login = async (req, res) => {
             req.session.isLoggedIn = true;
             req.session.name = user.name;
             req.session.email = user.email;
+            req.session.acess = user.access;
             req.session.save();
             // console.log(req.session);
 

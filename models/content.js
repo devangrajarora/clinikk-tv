@@ -22,7 +22,7 @@ const content = new mongoose.Schema({
         required: true,
     },
     uploaded_at: { 
-        type: Date,
+        type: String,
         required: true,
     },
     uploaded_by: { 

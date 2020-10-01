@@ -18,6 +18,10 @@ const users = new mongoose.Schema({
         type: String,
         required: true,
     },
+    access: {
+        type: Number,
+        default: 0,
+    },
     liked_categories: { 
         type: Array,
     },
