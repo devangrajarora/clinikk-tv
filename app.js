@@ -7,6 +7,7 @@ const redis = require("redis");
 const redisStore = require('connect-redis')(session);
 
 const db = require('./config/db');
+const response = require('./utils/response');
 
 const PORT = process.env.PORT || 3000;
 
@@ -24,6 +25,9 @@ app.use(
       cookie: { maxAge: 604800000 }
     })
 );
+
+app.use(response);
+app.use("/", require("./routes"));
 
 db.connectMongo();
 
