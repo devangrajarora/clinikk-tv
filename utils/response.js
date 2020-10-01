@@ -7,10 +7,10 @@ module.exports = (req, res, next) => {
       });
     };
   
-    res.sendSuccess = (data, msg) => {
+    res.sendSuccess = (msg) => {
       res.send({
         success: true,
-        data
+        msg
         })
     };
     next();

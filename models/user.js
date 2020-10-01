@@ -16,6 +16,7 @@ const users = new mongoose.Schema({
     },
     location: { 
         type: String,
+        required: true,
     },
     liked_categories: { 
         type: Array,
