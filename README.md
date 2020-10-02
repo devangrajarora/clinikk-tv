@@ -11,4 +11,6 @@ Node.js, MongoDB, Amazon s3
 ```/uploadContent```: Allows admins (users with access level 1) to upload audio/video/pictures 
 to AWS S3 bucket\
 ```/feed```: get lastest posts\
-```/addToFavourites```: add selected post to favourites 
+```/addToFavourites```: add selected post to favourites \
+```/myFavourites```: view your favourite posts 
+
