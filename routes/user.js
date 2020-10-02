@@ -88,7 +88,30 @@ exp.myFavourites = async(req, res) => {
     } catch(err) {
         res.sendError(err);
     }
+}
 
+exp.like = async(req, res) => {
+
+    const contentID = req.body.contentID;
+
+    [err, result] = await to(content.findOneAndUpdate({_id : contentID}, {$inc : {'likes' : 1}}));
+    if(err) {
+        return res.sendError(err);
+    } else {
+        return res.sendSuccess('Post liked!');
+    }
+}
+
+exp.dislike = async(req, res) => {
+
+    const contentID = req.body.contentID;
+
+    [err, result] = await to(content.findOneAndUpdate({_id : contentID}, {$inc : {'likes' : -1}}));
+    if(err) {
+        return res.sendError(err);
+    } else {
+        return res.sendSuccess('Post disliked!');
+    }
 }
 
 module.exports = exp;

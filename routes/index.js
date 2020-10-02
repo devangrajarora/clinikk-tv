@@ -32,5 +32,7 @@ router.get('/feed', loggedIn, user.getContent);
 router.get('/feed/:contentID', loggedIn, user.getContentByID);
 router.post('/addToFavourites', loggedIn, user.addToFavourites);
 router.get('/myFavourites', loggedIn, user.myFavourites);
+router.post('/like', loggedIn, user.like);
+router.post('/dislike', loggedIn, user.dislike);
 
 module.exports = router;

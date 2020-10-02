@@ -13,6 +13,10 @@ const content = new mongoose.Schema({
         type: Array, 
         required: true,
     },
+    likes: {
+        type: Number,
+        default: 0,
+    },
     content_link: { 
         type: String,
         required: true,

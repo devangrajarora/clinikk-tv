@@ -12,3 +12,5 @@ Node.js, MongoDB, Amazon s3
 to AWS S3 bucket\
 ```/feed```: get lastest posts\
 ```/addToFavourites```: add selected post to favourites 
+```/like```: like selected post \ 
+```/dislike```: dislike selected post 
