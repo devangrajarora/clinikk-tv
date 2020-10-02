@@ -30,6 +30,7 @@ router.post('/uploadContent', loggedIn, admin.uploadContent);
 
 router.get('/feed', loggedIn, user.getContent);
 router.get('/feed/:contentID', loggedIn, user.getContentByID);
-router.get('/addToFavourites/:contentID', loggedIn, user.addToFavourites);
+router.post('/addToFavourites', loggedIn, user.addToFavourites);
+router.get('/myFavourites', loggedIn, user.myFavourites);
 
 module.exports = router;
