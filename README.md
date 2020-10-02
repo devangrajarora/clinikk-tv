@@ -7,4 +7,6 @@ Node.js, MongoDB, Amazon s3
 
 ```/register```: store details of new user in DB with password hashing \
 ```/login```: user authentication \
-```/logout``` 
+```/logout```: log out user and destroy session data \
+```/uploadContent```: Allows admins (users with access level 1) to upload audio/video/pictures 
+to AWS S3 bucket
