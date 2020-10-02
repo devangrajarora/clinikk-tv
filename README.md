@@ -15,6 +15,5 @@ to AWS S3 bucket <br />
 ```/myFavourites```: view your favourite posts <br />
 ```/like```: like selected post <br />
 ```/dislike```: dislike selected post <br />
-```/addToFavourites```: add selected post to favourites 
  
 
