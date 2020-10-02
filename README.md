@@ -9,6 +9,6 @@ Node.js, MongoDB, Amazon s3
 ```/login```: user authentication \
 ```/logout```: log out user and destroy session data \
 ```/uploadContent```: Allows admins (users with access level 1) to upload audio/video/pictures 
-to AWS S3 bucket
+to AWS S3 bucket\
 ```/feed```: get lastest posts\
 ```/addToFavourites```: add selected post to favourites 
