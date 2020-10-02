@@ -114,4 +114,16 @@ exp.dislike = async(req, res) => {
     }
 }
 
+exp.contentByCategory = async(req, res) => {
+
+    const reqdCategory = req.body.category.trim().toLowerCase();
+    [err,result] = await to(content.find({category: {$in: [ reqdCategory ]}}));
+
+    if(err) {
+        res.sendError(err,`Error in finding content for ${reqdCategory}`);
+    } else {
+        res.sendSuccess(result)
+    }
+}
+
 module.exports = exp;
