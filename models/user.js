@@ -22,10 +22,7 @@ const users = new mongoose.Schema({
         type: Number,
         default: 0,
     },
-    liked_categories: { 
-        type: Array,
-    },
-    saved_videos: { 
+    liked_videos: { 
         type: Array,
     }
 });

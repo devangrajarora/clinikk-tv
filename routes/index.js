@@ -13,7 +13,6 @@ const loggedIn = (req, res, next) => {
 }
 
 const notLoggedIn = (req, res, next) => {
-    console.log(req.session);
     if (typeof(req.session.isLoggedIn) === 'undefined' || req.session.isLoggedIn === false) {
         return next();
     } else {

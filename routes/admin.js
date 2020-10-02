@@ -29,6 +29,11 @@ const allowedMimetypes = new Set([
 // http://expressjs.com/en/resources/middleware/multer.html
 
 const fileFilter = (req, file, cb) => {
+
+    if(req.session.access != '1') {
+        cb(new Error(`User doesn't have accces to upload`, false));
+    }
+
     if (allowedMimetypes.has(file.mimetype)) {
         cb(null, true); // accept file
     } else {
@@ -62,10 +67,6 @@ router.uploadContent = async(req, res) => {
     try{
         upload(req, res, async err => {
             if(err) res.sendError(err);
-
-            if(req.session.access != '1') {
-                return res.sendError(null, `User doesn't have access to upload content`);
-            }
 
             const newContent = new content({
                 title: req.body.title.trim(),
