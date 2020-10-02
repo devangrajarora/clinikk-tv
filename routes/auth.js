@@ -1,6 +1,5 @@
-const to = require('../utils/to');
 const bcrypt = require('bcryptjs');
-const users = require('../models/user');
+const users = require('../models/users');
 
 let exp = {};
 

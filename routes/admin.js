@@ -1,12 +1,12 @@
 const content = require('../models/content');
-const users = require('../models/user');
-const to = require('../utils/to');
-const router = require('express').Router();
+const mongoose = require('mongoose');
 const aws = require('aws-sdk');
 const multer = require('multer');
 const multerS3 = require('multer-s3');
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '../.env') });
+
+let exp = {}
 
 aws.config.update({
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -62,7 +62,7 @@ const upload = multer({
     limits: limits
 }).single("file"); // accept a single file which will be stored in req.file
 
-router.uploadContent = async(req, res) => {
+exp.uploadContent = async(req, res) => {
 
     try{
         upload(req, res, async err => {
@@ -74,7 +74,7 @@ router.uploadContent = async(req, res) => {
                 category: req.body.category,
                 likes: 0,
                 content_link: req.file.location,
-                uploaded_at: new Date().toDateString(),
+                uploaded_at: new Date().toISOString(),
                 uploaded_by: req.session.email
             });
 
@@ -92,4 +92,4 @@ router.uploadContent = async(req, res) => {
     
 };
 
-module.exports = router;
+module.exports = exp;

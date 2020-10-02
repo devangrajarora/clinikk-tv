@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const auth = require('./auth');
 const admin = require('./admin');
+const user = require('./user');
 
 // middlewares
 const loggedIn = (req, res, next) => {
@@ -16,7 +17,7 @@ const notLoggedIn = (req, res, next) => {
     if (typeof(req.session.isLoggedIn) === 'undefined' || req.session.isLoggedIn === false) {
         return next();
     } else {
-        return res.redirect('/');
+        return res.redirect('/feed');
     }
 }
 
@@ -26,5 +27,9 @@ router.get('/login', notLoggedIn, auth.login);
 router.get('/logout', loggedIn, auth.logout);
 
 router.post('/uploadContent', loggedIn, admin.uploadContent);
+
+router.get('/feed', loggedIn, user.getContent);
+router.get('/feed/:contentID', loggedIn, user.getContentByID);
+router.get('/addToFavourites/:contentID', loggedIn, user.addToFavourites);
 
 module.exports = router;
