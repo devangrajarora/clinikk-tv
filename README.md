@@ -17,5 +17,7 @@ to AWS S3 bucket and stores post information in database <br />
 ```/dislike```: dislike selected post <br />
 ```/contentByCategory```: gets posts tagged under specified category <br />
  
+ 
+ ### Schema
 
-![Alt text](relative/path/to/img.jpg?raw=true "Title")
+![schama](schema.png)
