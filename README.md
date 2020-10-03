@@ -18,3 +18,4 @@ to AWS S3 bucket <br />
 ```/contentByCategory```: gets posts tagged under specified category <br />
  
 
+![Alt text](relative/path/to/img.jpg?raw=true "Title")
