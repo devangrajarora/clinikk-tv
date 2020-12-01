@@ -1,3 +1,3 @@
 # clinikk-tv
 
-An API for a basic video streaming service I made as an internship assignment using Node.js, Mongoose and AWS s3
+An API for an audio/video streaming service made using Node.js, Mongoose and AWS s3, to provide health related content to users.
